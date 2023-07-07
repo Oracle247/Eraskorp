@@ -1,0 +1,26 @@
+import React from 'react'
+import { IProduct } from '@/interfaces';
+import { BiEdit } from 'react-icons/bi';
+import { MdOutlineDelete } from 'react-icons/md';
+
+const ProductCard = ({ product, mode, handleEdit, handleDelete }: { product: IProduct, mode: string, handleDelete?: Function, handleEdit?: Function }) => {
+    return (
+        <>
+            <div className="bg-[#F9E9E8] h-80 w-full relative rounded-2xl parent overflow-hidden p-8 py-12 flex flex-col justify-center items-center gap-3">
+                <div className="transition delay-100 ease-in-out w-full h-full child absolute bg-black opacity-70 hover:translate-x-[-100%] duration-300"></div>
+                <h2 className="text-3xl font-extrabold capitalize mb-3 z-20 text-primary">{product?.name}</h2>
+                {mode === 'admin' && handleDelete && handleEdit && (
+                    <div className="flex gap-3">
+                        <BiEdit onClick={() => handleEdit(product?._id)} size="1.2rem" className="cursor-pointer" />
+                        <MdOutlineDelete onClick={() => handleDelete(product?._id) } size="1.2rem" className="text-red-400 cursor-pointer" />
+
+                        {/* <button className="bg-primary text-white px-3 py-2 rounded-md" onClick={() => deleteProduct(product._id)}>Delete</button>
+                        <button className="bg-primary text-white px-3 py-2 rounded-md">Edit</button> */}
+                    </div>
+                )}
+            </div>
+        </>
+    )
+}
+
+export default ProductCard

@@ -29,6 +29,7 @@ export interface IProductTest {
 }
 
 export interface IProduct {
+    _id?: mongoose.ObjectId | null;
     image: string;
     name: string;
     description: string;

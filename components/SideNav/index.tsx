@@ -8,7 +8,7 @@ import { TbSitemap } from 'react-icons/tb'
 import { TiNews } from 'react-icons/ti'
 import { FaAward } from 'react-icons/fa'
 import { AiTwotoneGold, AiOutlineHome } from 'react-icons/ai'
-import Logo from "@/assets/logo-tp.png"
+import Logo from "@/assets/eraskorp/IMG-20230608-WA0069-removebg-preview.png"
 import Image from 'next/image'
 import { useSession, signIn, signOut } from "next-auth/react"
 
@@ -22,7 +22,7 @@ const SideNav = ({ }) => {
         <div>
             <div className='w-full flex flex-col items-center text-center gap-5 py-8 border-b border-white/10'>
                 <Link href={"/"}>
-                    <Image src={Logo} className='w-12 h-12 md:h-12 bg-white' alt='' />
+                    <Image src={Logo} className='w-12 h-12 md:h-12 bg-transparent' alt='' />
                 </Link>
                 <div className="flex items-center text-xs gap-2">
                     {/* <span className='w-6 h-6 bg-white/30' /> */}

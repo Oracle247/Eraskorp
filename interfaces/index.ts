@@ -34,10 +34,10 @@ export interface IProduct {
     name: string;
     description: string;
     performantFeature: string;
-    testResults: IProductTest[];
+    testResults: Array<IProductTest>;
     testResultsImage: string;
     storage: string;
-    sizes: number[];
+    sizes: Array<number>;
 }
 
 export interface IFeedback {
@@ -132,8 +132,8 @@ export interface IWinner {
     category: string;
 }
 export interface IReducerAction<T> {
-    type: T;
-    payload?: string | { [key: string]: string };
+    type: T | string;
+    payload?: string | { [key: string]: string } | IProductTest;
     data?: string | { [key: string]: string };
     name?: string;
 }

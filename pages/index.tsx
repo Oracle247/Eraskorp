@@ -19,31 +19,23 @@ import NewsImg from '@/assets/news.png'
 import GradImg from '@/assets/graduation.png'
 import { BiCircle } from 'react-icons/bi'
 import Link from "next/link";
-import { IAdvisory, ICandidate, ICms, INews, IReducerAction } from '@/interfaces'
+import { ICms, INews, IReducerAction } from '@/interfaces'
 import usePost from '@/hooks/usePost';
 import { toast } from 'react-toastify';
 import Loader from '@/components/Loader';
 import Ambassadors from "@/components/Ambassadors";
-import Advisory from "@/components/Advisory";
+import { IProduct } from "@/interfaces";
+import Product from "@/components/ProductCard";
 import dbConnect from '@/lib/dbConnection';
 import CmsModel from '@/models/CmsModel';
 import ProductModel from '@/models/ProductModel';
 import { useRouter } from "next/router";
 import NewsCard from "@/components/NewsCard";
 import { AiOutlineCheck } from "react-icons/ai";
+import { chmodSync } from "fs";
 
 
-
-// const initialState: ICandidate = {
-//   email: '',
-//   name: '',
-//   number: '',
-//   category: '',
-// }
-
-// type IAction = 'email' | 'name' | 'number' | 'category' | 'reset'
-
-export default function Home({ cms, advisory, news }: { cms: ICms, advisory: IAdvisory[], news: INews[] }) {
+export default function Home({ cms, products }: { cms: ICms, products: IProduct[] }) {
   const router = useRouter()
 
   return (
@@ -99,23 +91,18 @@ export default function Home({ cms, advisory, news }: { cms: ICms, advisory: IAd
             </h3>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-[#F9E9E8] h-80 w-full relative rounded-2xl parent overflow-hidden p-8 py-12 flex flex-col justify-center items-center gap-3">
-              <div className="transition delay-100 ease-in-out w-full h-full child absolute bg-black opacity-70 hover:translate-x-[-100%] duration-300"></div>
-              <h2 className="text-3xl font-extrabold capitalize mb-3 z-20 text-primary">Erasko Gold</h2>
-            </div>
-            <div className="bg-[#F9E9E8] h-80 w-full relative rounded-2xl p-8 py-12 flex flex-col justify-center items-center gap-3">
-              <div className="w-full h-full absolute bg-black opacity-70"></div>
-              <h2 className="text-3xl font-extrabold capitalize mb-3 z-20 text-primary">Erasko Gold</h2>
-            </div>
-            <div className="bg-[#F9E9E8] h-80 w-full relative rounded-2xl p-8 py-12 flex flex-col justify-center items-center gap-3">
-              <div className="w-full h-full absolute bg-black opacity-70"></div>
-              <h2 className="text-3xl font-extrabold capitalize mb-3 z-20 text-primary">Erasko Gold</h2>
-            </div>
-            <div className="bg-[#F9E9E8] h-80 w-full relative rounded-2xl p-8 py-12 flex flex-col justify-center items-center gap-3">
-              <div className="w-full h-full absolute bg-black opacity-70"></div>
-              <h2 className="text-3xl font-extrabold capitalize mb-3 z-20 text-primary">Erasko Gold</h2>
-            </div>
-          </div>
+          {
+            products?.length > 0 ? (
+              products?.map((item: IProduct, index: number) => (
+                <Product key={index} product={item} mode="user"/>
+              ))
+            ) : (
+              <div className="flex flex-col items-center justify-center gap-4">
+                <h1 className="text-2xl font-argentinum">No Products</h1>
+              </div>  
+            )
+          }
+        </div>
         </section>
                
         {/* <Advisory advisory={advisory} /> */}
@@ -128,14 +115,14 @@ export default function Home({ cms, advisory, news }: { cms: ICms, advisory: IAd
 
 export const getServerSideProps = async () => {
   let cms = {}
-  let product = []
+  let products = []
   try {
       await dbConnect()
       const res = await CmsModel.findOne({}).lean();
       cms = JSON.parse(JSON.stringify(res))
 
       const response = await ProductModel.find({}).lean();
-      product = JSON.parse(JSON.stringify(response))
+      products = JSON.parse(JSON.stringify(response))
 
       // console.log({news_res})
       // news = JSON.parse(JSON.stringify(news_res))
@@ -145,8 +132,7 @@ export const getServerSideProps = async () => {
       return {
           props: {
               cms: {},
-              news: [],
-              product: [],
+              products: [],
               status: 'failed'
           }
       }
@@ -156,7 +142,7 @@ export const getServerSideProps = async () => {
   return {
       props: {
           cms,
-          product,
+          products,
           status: 'success'
       }
   }

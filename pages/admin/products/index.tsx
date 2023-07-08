@@ -76,18 +76,20 @@ const Products = () => {
           <h1 className='text-3xl text-black/70 font-argentinum'>Products</h1>
           <Button onClick={() => router.push("/admin/products/add")} className="text-white px-4 sm:px-6 py-2 rounded-xl text-sm whitespace-nowrap">Add Product</Button>
         </div>
-        {
-          data.length > 0 ? (
-            data.map((item: IProduct, index: number) => (
-              <Product key={index} product={item} mode="admin" handleDelete={handleDelete} handleEdit={handleEdit} />
-            ))
-          ) : (
-            <div className="flex flex-col items-center justify-center gap-4">
-              <h1 className="text-2xl font-argentinum">No Products</h1>
-              <Button onClick={() => router.push("/admin/products/add")} className="text-white px-4 sm:px-6 py-2 rounded-xl text-sm whitespace-nowrap">Add Product</Button>
-            </div>  
-          )
-        }
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {
+            data.length > 0 ? (
+              data.map((item: IProduct, index: number) => (
+                <Product key={index} product={item} mode="admin" handleDelete={handleDelete} handleEdit={handleEdit} />
+              ))
+            ) : (
+              <div className="flex flex-col items-center justify-center gap-4">
+                <h1 className="text-2xl font-argentinum">No Products</h1>
+                <Button onClick={() => router.push("/admin/products/add")} className="text-white px-4 sm:px-6 py-2 rounded-xl text-sm whitespace-nowrap">Add Product</Button>
+              </div>  
+            )
+          }
+        </div>
       </div>
     </AdminLayout>
   );

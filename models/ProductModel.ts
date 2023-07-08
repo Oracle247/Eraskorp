@@ -2,23 +2,23 @@ import { IProduct } from '@/interfaces';
 import { IProductTest } from '@/interfaces';
 import { models, model, Schema } from 'mongoose';
 
-const CandidateSchema: Schema = new Schema<IProduct>({
+const ProductSchema: Schema = new Schema<IProduct>({
   image: {
     type: String,
-    required: true,
+    // required: true,
     unique: true,
   },
   name: {
     type: String,
-    required: true,
+    // required: true,
   },
   description: {
     type: String,
-    required: true,
+    // required: true,
   },
   performantFeature: {
     type: String,
-    required: true,
+    // required: true,
   },
   testResults: {
     type: Array<IProductTest>(),
@@ -26,11 +26,11 @@ const CandidateSchema: Schema = new Schema<IProduct>({
   },
   testResultsImage: {
     type: String,
-    required: true,
+    // required: true,
   },
   storage: {
     type: String,
-    required: true,
+    // required: true,
   },
   sizes: {
     type: Array<Number>(),
@@ -41,7 +41,7 @@ const CandidateSchema: Schema = new Schema<IProduct>({
 });
 
 
-const CandidateModel = models.Candidate || model('Candidate', CandidateSchema);
+const ProductModel = models.Product || model('Product', ProductSchema);
 
 
-export default CandidateModel
+export default ProductModel

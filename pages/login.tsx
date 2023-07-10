@@ -88,7 +88,7 @@ const Login = () => {
                         <div>
                             <p className="md:text-4xl">
                                 <span className="font-bold text-primary">Welcome to </span>
-                                <span className="font-bold text-gray-800 font-argentinum">Brilliant Brains</span>
+                                <span className="font-bold text-gray-800 font-argentinum">Eraskorp</span>
                             </p>
                             <p className='hidden md:block'>The Brilliant Brain Scholarship Scheme is a scholarship management platform with a vision to ensuring that no person of school age is denied access to education </p>
                         </div>

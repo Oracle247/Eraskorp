@@ -11,19 +11,19 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
   return (
-    <div className='section flex items-center justify-between bg-white text-black shadow-md py-2 md:py-5 fixed top-0 left-0 z-30 w-full min-h-[50px]'>
+    <div className='section flex items-center justify-between bg-blue text-black py-2 md:py-5 fixed top-0 left-0 z-30 w-full min-h-[50px]'>
     <header className='w-full flex items-center justify-between '>
         <Link href={"/"} className="flex justify-center items-end gap-4">
           <Image src={Logo} className='w-12 h-12 md:h-12' alt='' />
-          <h2 className="text-blue font-extrabold text-2xl">ERASKORP</h2>
+          <h2 className="text-white font-extrabold text-2xl">ERASKORP</h2>
         </Link>
-        <nav className="hidden lg:flex items-center gap-2 lg:gap-4 whitespace-nowrap">
+        <nav className="hidden text-white lg:flex items-center gap-2 lg:gap-4 whitespace-nowrap">
           <ul className='flex flex-col lg:flex-row items-center text-sm text-dark-light gap-2 lg:gap-4 font-medium'>
             <li><Link href="/" className={`pb-1.5 px-1 font-medium`}>Home</Link></li>
             <li><Link href="/" className={`pb-1.5 px-1 font-medium`}>About</Link></li>
             {/* <li><Link href="/" className={`pb-1.5 px-1 font-medium`}>Scholarship</Link></li> */}
             <li><Link href="/" className={`pb-1.5 px-1 font-medium`}>Our Products</Link></li>
-            <li className='relative bg-white group cursor-pointer'>
+            <li className='relative bg-blue group cursor-pointer'>
               <span className={`pb-1.5 px-1 font-medium`}>Login</span>
               <div className='hidden absolute top-6 left-0 group-hover:flex flex-col gap-2 bg-white shadow-md'>
                 <Link href={`/login`} className='pb-2'>
@@ -44,7 +44,7 @@ const Header = () => {
             } */}
           </ul>
           <a href={`https://box.reinsys.net/brilliant/`}>
-              <Button className={`py-2 pb-2.5 px-6 text-xs font-medium text-white bg-blue rounded-full`}>
+              <Button className={`py-2 pb-2.5 px-6 text-xs font-medium text-blue font-semibold bg-gold rounded-full`}>
                 Sign Up
               </Button>
           </a>

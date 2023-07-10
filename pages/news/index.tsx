@@ -42,7 +42,7 @@ const News = () => {
         <h1 className="text-xl md:text-3xl text-white font-semibold text-center">
           Let’s Keep You Updated On Every Bit
         </h1>
-        {/* <h2 className='text-sm md:text-base text-center px-12 text-white'>Articles on Brilliant brains makes sure you never miss a thing</h2> */}
+        {/* <h2 className='text-sm md:text-base text-center px-12 text-white'>Articles on Eraskorp makes sure you never miss a thing</h2> */}
       </div>
       <div className="flex flex-col gap-20 px-4 md:px-8 lg:px-[8.4375rem] py-20 min-h-[50vh]">
         <div className="flex flex-col gap-4">

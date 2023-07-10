@@ -78,7 +78,7 @@ const Register = () => {
                         <div>
                             <p className="md:text-4xl">
                                 <span className="text-primary font-bold">Welcome to </span>
-                                <span className="text-gray-800 font-bold font-argentinum">Brilliant Brains</span>
+                                <span className="text-gray-800 font-bold font-argentinum">Eraskorp</span>
                             </p>
                             <p className='hidden md:block'>The Brilliant Brain Scholarship Scheme is a scholarship management platform with a vision to ensuring that no person of school age is denied access to education</p>
                         </div>

@@ -8,7 +8,7 @@ interface Props extends React.ComponentPropsWithoutRef<"button"> {
 
 const Button = ({ children, className, gradient, ...rest }: Props) => {
   return (
-    <button className={`${gradient ? gradient : "grad-to-right"} bg-blue ${className ? className : ""}`} {...rest} >
+    <button className={`${gradient ? gradient : ""} bg-blue ${className ? className : ""}`} {...rest} >
         {children}
     </button>
   )

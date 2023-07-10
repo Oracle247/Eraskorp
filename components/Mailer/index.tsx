@@ -36,7 +36,7 @@ const EmailForm = ({data: info}: IProps) => {
       const response = await post({
         sender,
         recipient: info?.email,
-        subject: 'Feedback from Brilliant Brains',
+        subject: 'Feedback from Eraskorp',
         message
       });
       

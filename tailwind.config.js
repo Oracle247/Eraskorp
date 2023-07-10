@@ -8,8 +8,10 @@ module.exports = {
       colors: {
         primary: "#D73728",
         blue: "#090f3b",
+        "blue-dark": "#0a1439",
         "blue-light": '#1a1f5c',
-        gold: "#ffcb04"
+        gold: "#ffcb04",
+        "gold-2": "#fed701"
       },
       fontFamily: {
         sans: ["Montserrat", "sans-serif"],

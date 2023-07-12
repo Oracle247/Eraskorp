@@ -12,13 +12,8 @@ const Links = ({ isOpen }: { isOpen: boolean }) => {
           <nav className="md:hidden flex flex-col h-full justify-between gap-16 p-4 pt-20 px-8 mb-8">
             <ul className='flex flex-col text-dark-light gap-7 md:gap-4 lg:gap-7 font-medium'>
               <li><Link href="/admin" className={`pb-1.5 px-1 font-medium`}>Dashboard</Link></li>
-              <li><Link href="/admin/winners" className={`pb-1.5 px-1 font-medium`}>Winners</Link></li>
-              <li><Link href="/admin/ambassadors" className={`pb-1.5 px-1 font-medium`}>Ambassadors</Link></li>
-              <li><Link href="/admin/advisory" className={`pb-1.5 px-1 font-medium`}>Advisory Board</Link></li>
+              <li><Link href="/admin/products" className={`pb-1.5 px-1 font-medium`}>Products</Link></li>
               <li><Link href="/admin/cms" className={`pb-1.5 px-1 font-medium`}>Home Content</Link></li>
-              <li><Link href="/admin/about" className={`pb-1.5 px-1 font-medium`}>About</Link></li>
-              <li><Link href="/admin/news" className={`pb-1.5 px-1 font-medium`}>News & Updates</Link></li>
-              <li><Link href="/admin/scholarships" className={`pb-1.5 px-1 font-medium`}>Available Scholarships</Link></li>
               <li><Link href="/admin/feedbacks" className={`pb-1.5 px-1 font-medium`}>Feedbacks</Link></li>
               <li><Link href="/admin/faqs" className={`pb-1.5 px-1 font-medium`}>FAQs</Link></li>
               {/* {!user ? 

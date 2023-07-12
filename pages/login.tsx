@@ -87,10 +87,10 @@ const Login = () => {
                     <div className="flex flex-col-reverse items-center justify-center flex-1 text-center md:items-start md:flex-col md:justify-between md:text-left">
                         <div>
                             <p className="md:text-4xl">
-                                <span className="font-bold text-primary">Welcome to </span>
-                                <span className="font-bold text-gray-800 font-argentinum">Eraskorp</span>
+                                <span className="font-bold text-gold">Welcome to </span>
+                                <span className="font-bold text-blue-800 font-argentinum">Eraskorp</span>
                             </p>
-                            <p className='hidden md:block'>The Brilliant Brain Scholarship Scheme is a scholarship management platform with a vision to ensuring that no person of school age is denied access to education </p>
+                            <p className='hidden md:block'>Eraskorp Nigeria Limited (ENL) is an indigenous Security and Logistics services provider in the Oil & Gas and Marine sectors of the Nigerian economy with the vision of delivering top rated security services as required by clients while optimizing client’s profit and minimizing operational cost. </p>
                         </div>
                         {/* <h1 className="mb-3 text-4xl font-bold text-center text-gray-800 font-argentinum md:hidden">Sign In</h1> */}
                         <Image src={LockImg} alt="" className="w-32 h-24 md:w-full md:h-auto" /> 

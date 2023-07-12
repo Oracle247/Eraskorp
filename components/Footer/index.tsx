@@ -11,7 +11,7 @@ const Footer = () => {
       <footer className=''>
         <div className='py-6 md:py-10 section grad-to-right text-white'>
           {/* <Socials /> */}
-          <div className="flex gap-12">
+          <div className="flex flex-col md:flex-row gap-12">
             <div className="flex flex-col justify-center items-start">
               <Image src={Logo} className='w-24 h-24 md:h-24' alt='' />
               <h2 className="text-white font-extrabold text-4xl">ERASKORP</h2>

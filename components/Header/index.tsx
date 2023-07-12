@@ -20,9 +20,7 @@ const Header = () => {
         <nav className="hidden text-white lg:flex items-center gap-2 lg:gap-4 whitespace-nowrap">
           <ul className='flex flex-col lg:flex-row items-center text-sm text-dark-light gap-2 lg:gap-4 font-medium'>
             <li><Link href="/" className={`pb-1.5 px-1 font-medium`}>Home</Link></li>
-            <li><Link href="/" className={`pb-1.5 px-1 font-medium`}>About</Link></li>
-            {/* <li><Link href="/" className={`pb-1.5 px-1 font-medium`}>Scholarship</Link></li> */}
-            <li><Link href="/" className={`pb-1.5 px-1 font-medium`}>Our Products</Link></li>
+            <li><Link href="/products" className={`pb-1.5 px-1 font-medium`}>Our Products</Link></li>
             <li className='relative bg-blue group cursor-pointer'>
               <span className={`pb-1.5 px-1 font-medium`}>Login</span>
               <div className='hidden absolute top-6 left-0 group-hover:flex flex-col gap-2 bg-white shadow-md'>
@@ -30,18 +28,9 @@ const Header = () => {
                   <span className={`py-2 pb-2.5 px-6 text-xs font-medium`}>
                     Admin
                   </span>
-                </Link>
+                </Link> 
               </div>
             </li>
-            {/* {!user ? 
-            <li><Link href="/login" className={`${pathname==="/login" && "text-green border-b-2"} pb-1.5 px-1 font-medium`}>Login</Link></li>
-            :
-            <li>
-              <div onClick={() => dispatch({type: "LOGOUT"})} className='px-1 font-medium cursor-pointer'>
-                 Logout
-              </div>
-            </li>
-            } */}
           </ul>
           <a href={`https://box.reinsys.net/brilliant/`}>
               <Button className={`py-2 pb-2.5 px-6 text-xs font-medium text-blue font-semibold bg-gold rounded-full`}>
@@ -54,22 +43,11 @@ const Header = () => {
         <nav className="lg:hidden flex flex-col gap-16 p-4 pt-20 px-8 mb-8">
           <ul className='flex flex-col text-sm text-dark-light gap-7 md:gap-4 lg:gap-7 font-medium'>
             <li><Link href="/" className={`pb-1.5 px-1 font-medium`}>Home</Link></li>
-            <li><Link href="/about-us" className={`pb-1.5 px-1 font-medium`}>About</Link></li>
-            {/* <li><Link href="/" className={`pb-1.5 px-1 font-medium`}>Scholarship</Link></li> */}
-            <li><Link href="/winners" className={`pb-1.5 px-1 font-medium`}>Winners</Link></li>
-            <li><Link href="/ambassadors" className={`pb-1.5 px-1 font-medium`}>Ambassadors</Link></li>
-            <li><Link href="/news" className={`pb-1.5 px-1 font-medium`}>News</Link></li>
-            <li><Link href="/scholarships" className={`pb-1.5 px-1 font-medium`}>Available Scholarships</Link></li>
-            <li><Link href="/contact-us" className={`pb-1.5 px-1 font-medium`}>Contact Us</Link></li>
-            <li><Link href="/faqs" className={`pb-1.5 px-1 font-medium`}>FAQs</Link></li>
+            <li><Link href="/products" className={`pb-1.5 px-1 font-medium`}>Our Product</Link></li>
+
             <li className='relative bg-white group cursor-pointer'>
               <span className={`pb-1.5 px-1 font-medium`}>Login</span>
               <div className='hidden absolute top-6 left-0 group-hover:flex flex-col gap-2 bg-white shadow-md'>
-                <a href={`https://box.reinsys.net/brilliant/`} className='border-b-2 py-2'>
-                  <span className={`py-2 pb-2.5 px-6 text-xs font-medium`}>
-                    User
-                  </span>
-                </a>
                 <Link href={`/login`} className='pb-2'>
                   <span className={`py-2 pb-2.5 px-6 text-xs font-medium`}>
                     Admin
@@ -88,7 +66,7 @@ const Header = () => {
             } */}
           </ul>
           <a href={`https://box.reinsys.net/brilliant/`}>
-            <Button className={`py-2 pb-2.5 px-6 text-xs font-medium text-white bg-primary rounded-full`}>
+            <Button className={`py-2 pb-2.5 px-6 text-xs font-medium text-white grad-to-right rounded-full`}>
               Sign Up
             </Button>
           </a>

@@ -63,7 +63,7 @@ const Table = <T extends any>({ data, columns, className, isSearch }: Props) => 
   // const search = debounce(handleFilter, 1000)
 
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden w-full">
       {isSearch && (
         <div className="flex items-center gap-8 w-full mb-8">
           <input value={search} onChange={(e) => setSearch(e.target.value)} type="text" placeholder="search" className="my-2 w-full border-black/20 md:pl-4 p-2 py-2.5 rounded-lg border-2 outline-none" />

@@ -79,13 +79,6 @@ const AddProduct = () => {
         post({ ...product, description: editorRef.current?.getContent(), performantFeature: performantFeatureRef.current?.getContent() })
     }
 
-    const handleKeyPress = (e: React.KeyboardEvent<HTMLDivElement>) => {
-        if (e.key === 'Enter') {
-            e.preventDefault()
-            // setTestResults([...testResults, { parameter: "", method: "", result: "" }])
-        }
-    }
-
     const handleSubmit = (e: any) => {
         e.preventDefault()
         console.log({ testResult })
@@ -134,7 +127,7 @@ const AddProduct = () => {
             {(loading || uploadingImage) && <Loader modalOpen={true} />}
             <div className='p-4 py-12 sm:px-12 h-full overflow-y-auto'>
                 <div className="flex items-center gap-4 justify-between mb-16">
-                    <h1 className='text-3xl text-black/70 font-argentinum'>Add Board Member</h1>
+                    <h1 className='text-3xl text-black/70 font-argentinum'>Add Project</h1>
                     <Button onClick={() => router.push("/admin/products")} className="text-white px-4 sm:px-6 py-2 rounded-xl text-sm">View Product</Button>
                 </div>
                 <form className="flex flex-col gap-4" onSubmit={addProduct}>
@@ -188,15 +181,15 @@ const AddProduct = () => {
 
                         <div className="flex flex-col gap-1">
                             <label htmlFor="title" className="text-black/70">Test Parameter</label>
-                            <input required onChange={(e) => setTestResults({ ...testResult, parameter: e.target.value })} value={testResult?.parameter} type="text" name="parameter" id="parameter" className="border border-black/20 rounded-md p-2" />
+                            <input onChange={(e) => setTestResults({ ...testResult, parameter: e.target.value })} value={testResult?.parameter} type="text" name="parameter" id="parameter" className="border border-black/20 rounded-md p-2" />
                         </div>
                         <div className="flex flex-col gap-1">
                             <label htmlFor="title" className="text-black/70">Test Method</label>
-                            <input required onChange={(e) => setTestResults({ ...testResult, method: e.target.value })} value={testResult?.method} type="text" name="method" id="method" className="border border-black/20 rounded-md p-2" />
+                            <input onChange={(e) => setTestResults({ ...testResult, method: e.target.value })} value={testResult?.method} type="text" name="method" id="method" className="border border-black/20 rounded-md p-2" />
                         </div>
                         <div className="flex flex-col gap-1">
                             <label htmlFor="title" className="text-black/70">Test Result</label>
-                            <input required onChange={(e) => setTestResults({ ...testResult, result: e.target.value })} value={testResult?.result} type="text" name="result" id="result" className="border border-black/20 rounded-md p-2" />
+                            <input onChange={(e) => setTestResults({ ...testResult, result: e.target.value })} value={testResult?.result} type="text" name="result" id="result" className="border border-black/20 rounded-md p-2" />
                         </div>
                         <Button onClick={(e) => handleSubmit(e)} className="text-white px-4 sm:px-6 py-2 rounded-xl text-sm">Add Test Result</Button>
                     </div>
@@ -204,7 +197,7 @@ const AddProduct = () => {
                     <div className="flex flex-col gap-1">
                         <label htmlFor="title" className="text-black/70">Enter Sizes</label>
                         <div className="flex">
-                            <input required onChange={(e) => setSize(e.target.value) } type="number" name="size" id="size" value={size} className="border border-black/20 rounded-md p-2" />
+                            <input onChange={(e) => setSize(e.target.value) } type="number" name="size" id="size" value={size} className="border border-black/20 rounded-md p-2" />
                             <Button onClick={(e) => handleSizeSubmit(e)} className="text-white px-4 sm:px-6 py-2 rounded-xl text-sm">Add Size</Button>
                         </div>
                         <div className="flex justify-start items-center gap-2">

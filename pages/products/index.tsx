@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from 'react'
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md'
 import { paginate, changePage } from '@/utils'
-import ScholarshipCard from '@/components/ScholarshipCard'
+import productCard from '@/components/ProductCard'
 import Loader from '@/components/Loader'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { IAvailableScholarship } from '@/interfaces'
+import { IProduct } from '@/interfaces'
 
 
-const Scholarships = () => {
+const Products = () => {
   const [page, setPage] = useState(1)
-  const [data, setData] = useState<IAvailableScholarship[]>([])
+  const [data, setData] = useState<IProduct[]>([])
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const num_per_page = 6
 
   useEffect(() => {
-    const fetchScholarships = async () => {
+    const fetchProduct = async () => {
       setIsLoading(true)
       try {
-        const res = await fetch('/api/scholarships')
+        const res = await fetch('/api/product')
         const data = await res.json()
         if (!res.ok) {
           throw new Error(data?.message || 'An error Occured')
@@ -30,7 +30,7 @@ const Scholarships = () => {
       setIsLoading(false)
     }
 
-    fetchScholarships()
+    fetchProduct()
   }, [])
 
   // console.log('news', news)
@@ -47,11 +47,11 @@ const Scholarships = () => {
       </div>
       <div className="flex flex-col gap-20 px-4 md:px-8 lg:px-[8.4375rem] py-20 min-h-[50vh]">
         <div className="flex flex-col gap-4">
-          <h2 className="w-full text-center text-blue text-xl font-semibold">Available Scholarships</h2>
+          <h2 className="w-full text-center text-blue text-xl font-semibold">Available Product</h2>
           <div className='flex flex-col sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6'>
-            {data?.map((scholarship: any) => (
-              <ScholarshipCard key={scholarship._id} scholarship={scholarship} />
-            ))}
+            {/* {data?.map((product: any) => (
+              <productCard key={product._id} product={product} />
+            ))} */}
           </div>
         </div>
         { data?.length > 0 && data?.length > num_per_page &&
@@ -69,4 +69,4 @@ const Scholarships = () => {
   )
 }
 
-export default Scholarships
+export default Products

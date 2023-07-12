@@ -18,6 +18,10 @@ import { useRouter } from "next/router";
 export default function Home({ cms, products }: { cms: ICms, products: IProduct[] }) {
   const router = useRouter()
 
+  const handleClick = (id: any) => {
+    router.push(`/products/${id}`)
+  }
+
   return (
     <div>
       <Head>
@@ -203,7 +207,7 @@ export default function Home({ cms, products }: { cms: ICms, products: IProduct[
             {
               products?.length > 0 ? (
                 products?.map((item: IProduct, index: number) => (
-                  <Product key={index} product={item} mode="user" />
+                  <Product key={index} product={item} handleClick={handleClick} mode="user" />
                 ))
               ) : (
                 <div className="flex flex-col items-center justify-center gap-4">

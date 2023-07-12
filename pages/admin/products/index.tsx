@@ -14,8 +14,6 @@ import { BiEdit } from 'react-icons/bi';
 import Link from 'next/link';
 import { MdOutlineDelete } from 'react-icons/md';
 
-
-
 const Products = () => {
   const [loading, setLoading] = useState(false)
   const [data, setData] = useState<IProduct[]>([])

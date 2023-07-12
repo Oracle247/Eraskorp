@@ -12,7 +12,8 @@ const CmsSchema: Schema = new Schema<ICms>({
       // required: true
     },
     image: {
-      type: String,
+      type: Array<String>(),
+      default: []
       // required: true
     },
   },

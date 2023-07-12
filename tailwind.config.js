@@ -25,7 +25,12 @@ module.exports = {
       },
       animation: {
         animate: 'animate-left 2s ease-in-out once',
-      }
+      },
+      fontFamily: {
+        montserrat: ['Montserrat', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+        asap: ['Asap', 'sans-serif'],
+      },
     },
   },
   plugins: [

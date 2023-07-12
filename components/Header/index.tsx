@@ -23,8 +23,8 @@ const Header = () => {
             <li><Link href="/products" className={`pb-1.5 px-1 font-medium`}>Our Products</Link></li>
             <li className='relative bg-blue group cursor-pointer'>
               <span className={`pb-1.5 px-1 font-medium`}>Login</span>
-              <div className='hidden absolute top-6 left-0 group-hover:flex flex-col gap-2 bg-white shadow-md'>
-                <Link href={`/login`} className='pb-2'>
+              <div className='hidden absolute top-6 left-0 hover:underline group-hover:flex flex-col gap-2 bg-blue-light shadow-md'>
+                <Link href={`/login`} className='py-2'>
                   <span className={`py-2 pb-2.5 px-6 text-xs font-medium`}>
                     Admin
                   </span>
@@ -47,23 +47,14 @@ const Header = () => {
 
             <li className='relative bg-white group cursor-pointer'>
               <span className={`pb-1.5 px-1 font-medium`}>Login</span>
-              <div className='hidden absolute top-6 left-0 group-hover:flex flex-col gap-2 bg-white shadow-md'>
+              <div className='hidden absolute top-6 left-0 group-hover:flex flex-col gap-2 bg-white text-blue shadow-md'>
                 <Link href={`/login`} className='pb-2'>
                   <span className={`py-2 pb-2.5 px-6 text-xs font-medium`}>
                     Admin
-                  </span>
+                  </span> 
                 </Link>
               </div>
             </li>
-            {/* {!user ? 
-            <li><Link href="/login" className={`${pathname==="/login" && "text-green"} pb-1.5 px-1 font-medium`}>Login</Link></li>
-              :
-              <li>
-                <div onClick={() => dispatch({type: "LOGOUT"})} className='px-1 font-medium cursor-pointer'>
-                  Logout
-                </div>
-              </li>
-            } */}
           </ul>
           <a href={`https://box.reinsys.net/brilliant/`}>
             <Button className={`py-2 pb-2.5 px-6 text-xs font-medium text-white grad-to-right rounded-full`}>
@@ -74,7 +65,7 @@ const Header = () => {
       </div>
       { isOpen ? 
         <MdOutlineClose onClick={() => setIsOpen(false)} className={`cursor-pointer text-3xl lg:hidden relative z-50  text-green`} /> 
-        : <BiMenu onClick={() => setIsOpen(true)} className='cursor-pointer text-3xl lg:hidden relative z-50 text-green' />
+        : <BiMenu onClick={() => setIsOpen(true)} className='cursor-pointer text-3xl text-white lg:hidden relative z-50 text-green' />
       }
     </div>
   )

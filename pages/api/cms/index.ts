@@ -27,6 +27,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       
       const data: ICms = {
         hero: {
+          image: req.body?.hero?.image,
           header: req.body?.hero?.header,
           text: req.body?.hero?.text
         },

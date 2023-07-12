@@ -91,6 +91,7 @@ export interface IAboutUs {
 export interface ICms {
     _id?: mongoose.ObjectId | null;
     hero: {
+        image: Array<string>,
         header: string,
         text: string,
     },

@@ -24,7 +24,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       res.status(200).json(product);
     }
     else {
-
       if (req.method !== 'POST') {
         return res.status(400).json({ message: 'Request Method Not allowed' })
       }

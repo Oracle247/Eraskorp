@@ -13,26 +13,27 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const session = await getServerSession(req, res, authOptions)
     // console.log({session})
 
+    const { id } = req.query;
+    if (!id) return res.status(400).json({ message: 'ID is required' })
+    
+    if (req.method !== 'DELETE' && req.method !== 'GET' && req.method !== 'PATCH') {
+      return res.status(400).json({ message: 'Request Method Not allowed' })
+    }
+    if (req.method === 'GET') {
+      const product = await Product.findById(id).lean();
+      return res.status(200).json(product);
+    }
+
     if (!session) {
       return res.status(401).json({ message: "You must be signed in to access this" });
     } 
 
-    if (req.method !== 'DELETE' && req.method !== 'GET' && req.method !== 'PATCH') {
-      return res.status(400).json({ message: 'Request Method Not allowed' })
-    }
-
-    const { id } = req.query;
-    if (!id) return res.status(400).json({ message: 'ID is required' })
 
     if (req.method === 'DELETE') {
         
       const product = await Product.findByIdAndDelete(id).lean();
       console.log({ product })
      return res.status(200).json(product);
-    }
-    else if (req.method === 'GET') {
-      const product = await Product.findById(id).lean();
-      return res.status(200).json(product);
     }
     else if (req.method === 'PATCH') {
       const product = await Product.findByIdAndUpdate(id, req.body, { new: true }).lean();

@@ -35,10 +35,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             return;
         }
 
-        // if (req.body.access_code !== process.env.ACCESS_CODE) {
-        //     res.status(400).json({ message: 'Invalid access code' });
-        //     return;
-        // }
+        if (req.body.access_code !== process.env.ACCESS_CODE) {
+            res.status(400).json({ message: 'Invalid access code' });
+            return;
+        }
 
         const userExists = await User.findOne({
             $or: [

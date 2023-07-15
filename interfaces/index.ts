@@ -1,3 +1,4 @@
+import { info } from 'console';
 import mongoose from "mongoose"
 
 export interface IUserLogin {
@@ -41,9 +42,13 @@ export interface IProduct {
 }
 
 export interface IFeedback {
+    _id?: mongoose.ObjectId | null;
+    productId: mongoose.ObjectId | null;
     name: string;
     email: string;
-    message: string;
+    number: string;
+    info: string;
+    type: string;
 }
 
 export interface INews {

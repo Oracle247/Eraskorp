@@ -51,8 +51,24 @@ const columns = [
     },
   },
   {
-    name: "message",
-    label: "Message",
+    name: "number",
+    label: "Number",
+    options: {
+      filter: true,
+      sort: false,
+    },
+  },
+  {
+    name: "info",
+    label: "Info",
+    options: {
+      filter: true,
+      sort: false,
+    },
+  },
+  {
+    name: "type",
+    label: "Type",
     options: {
       filter: true,
       sort: false,
@@ -66,7 +82,7 @@ const columns = [
       return  (
         <div className="flex items-center gap-4 justify-left">
           <BsReply onClick={() => router.push(`/admin/feedbacks/${meta?._id}`)} size="1.2rem" className="cursor-pointer" />
-          <MdOutlineDelete onClick={() => deleteFeedbacks(meta?._id, `feedbacks/${meta?._id}`)} size="1.2rem" className="text-red-400 cursor-pointer" />
+          <MdOutlineDelete onClick={() => deleteFeedbacks(meta?._id, `feedback/${meta?._id}`)} size="1.2rem" className="text-red-400 cursor-pointer" />
         </div>
       )
     },
@@ -78,7 +94,7 @@ const columns = [
     const fetchFeedbacks = async () => {
       setLoading(true)
       try {
-        const res = await fetch(`/api/feedbacks`)
+        const res = await fetch(`/api/feedback`)
         const data = await res.json()
         
         if (!res.ok) throw new Error(data.message)

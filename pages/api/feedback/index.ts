@@ -19,14 +19,17 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         return res.status(400).json({ message: 'Request Method Not allowed' })
       }
 
-      if (!req.body.email || !req.body.name || !req.body.message) {
+      if (!req.body.email || !req.body.name || !req.body.number || !req.body.type || !req.body.productId) {
         return res.status(400).json({ message: 'Fill all required fields' })
       }
       
       const data: IFeedback = {
+        productId: req.body.productId,
         email: req.body.email,
         name: req.body.name,
-        message: req.body.message,
+        number: req.body.number,
+        info: req.body.info,
+        type: req.body.type
     }
 
       const feedback = await Feedback.create(data);

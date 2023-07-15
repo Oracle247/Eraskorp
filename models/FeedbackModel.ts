@@ -1,5 +1,5 @@
 import { IFeedback } from '@/interfaces';
-import { models, model, Schema } from 'mongoose';
+import { models, model, Schema, Mongoose } from 'mongoose';
 
 const FeedbackSchema: Schema = new Schema<IFeedback>({
   email: {
@@ -7,11 +7,24 @@ const FeedbackSchema: Schema = new Schema<IFeedback>({
     required: true,
     unique: true,
   },
+  productId: {
+    type: Schema.Types.ObjectId,
+    ref: 'Product',
+    required: true,
+  },
   name: {
     type: String,
     required: true,
   },
-  message: {
+  number: {
+    type: String,
+    required: true,
+  },
+  info: {
+    type: String,
+    // required: true,
+  },
+  type: {
     type: String,
     required: true,
   }

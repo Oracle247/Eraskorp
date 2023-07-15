@@ -4,15 +4,16 @@ import { paginate, changePage } from '@/utils'
 import Product from '@/components/ProductCard'
 import Loader from '@/components/Loader'
 import Header from '@/components/Header'
+import dbConnect from '@/lib/dbConnection';
+import ProductModel from '@/models/ProductModel';
 import Footer from '@/components/Footer'
 import { IProduct } from '@/interfaces'
 import { useRouter } from "next/router";
 
 
 
-const Products = () => {
+const Products = ({products} : {products: IProduct[]}) => {
   const [page, setPage] = useState(1)
-  const [data, setData] = useState<IProduct[]>([])
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const num_per_page = 6
 
@@ -22,27 +23,6 @@ const Products = () => {
   const handleClick = (id: any) => {
     router.push(`/products/${id}`)
   }
-
-  useEffect(() => {
-    const fetchProduct = async () => {
-      setIsLoading(true)
-      try {
-        const res = await fetch('/api/product')
-        const data = await res.json()
-        if (!res.ok) {
-          throw new Error(data?.message || 'An error Occured')
-        }
-        setData(data)
-      } catch (error) {
-        console.log({error})
-      }
-      setIsLoading(false)
-    }
-
-    fetchProduct()
-  }, [])
-
-  // console.log('news', news)
 
   return (
     <div className=''>
@@ -58,8 +38,8 @@ const Products = () => {
           <h2 className="w-full text-center text-blue text-xl font-semibold">Available Product</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {
-             data?.length > 0 ? (
-               data?.map((item: IProduct, index: number) => (
+             products?.length > 0 ? (
+               products?.map((item: IProduct, index: number) => (
                   <Product key={index} product={item} handleClick={handleClick} mode="user" />
                 ))
               ) : (
@@ -70,10 +50,10 @@ const Products = () => {
             }
           </div>
         </div>
-        { data?.length > 0 && data?.length > num_per_page &&
+        { products?.length > 0 && products?.length > num_per_page &&
           <div className="flex justify-center items-center w-full mt-4">
             <MdChevronLeft size={"1.5rem"} />
-            {data && [...Array(paginate({page, num_per_page, data: data})?.pages).keys()]?.map((page_num) => 
+            {products && [...Array(paginate({page, num_per_page, data: products})?.pages).keys()]?.map((page_num) => 
               <span key={page_num+1} onClick={() => changePage(page_num+1, setPage)} className={`${page===page_num+1 && "bg-primary text-white"} font-medium w-6 h-6 text-sm text-white grid place-items-center cursor-pointer`}>1</span>
             )}
             <MdChevronRight size={"1.5rem"} />
@@ -83,6 +63,33 @@ const Products = () => {
       <Footer />
     </div>
   )
+}
+
+export const getServerSideProps = async () => {
+  let products = []
+  try {
+    await dbConnect()
+
+    const response = await ProductModel.find({}).lean();
+    products = JSON.parse(JSON.stringify(response))
+
+  } catch (error) {
+    console.log(error)
+    return {
+      props: {
+        products: [],
+        status: 'failed'
+      }
+    } 
+  }
+
+
+  return {
+    props: {
+      products,
+      status: 'success'
+    }
+  }
 }
 
 export default Products

@@ -23,7 +23,7 @@ const Reply = () => {
   useEffect(() => {
     if (id) {
       setLoading(true)
-      fetch(`/api/feedbacks/${id}`)
+      fetch(`/api/feedback/${id}`)
         .then(res => res.json())
         .then(data => {
           setData(data)
@@ -35,27 +35,6 @@ const Reply = () => {
         })
     }
   }, [id])
-
-  // useEffect(() => {
-  //   const fetchFeedbacks = async () => {
-  //     try {
-  //       const res = await fetch(`/api/feedbacks`)
-  //       const data = await res.json()
-        
-  //       if (!res.ok) throw new Error(data.message)
-
-  //       console.log({data})
-  //       setData(data)
-  //     } catch (error) {
-  //       console.log({error})
-  //     }
-
-  //   }
-
-  //   fetchFeedbacks()
-  // }, [deleted])
-
-
 
   return (
     <AdminLayout>

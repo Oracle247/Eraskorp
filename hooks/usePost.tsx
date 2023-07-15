@@ -27,7 +27,6 @@ const usePost = ({ api, method, onSuccess, onFailure, ...rest }: Props) => {
                 body: JSON.stringify(val)
             })
  
-        
              
             if (!res.ok) {
                 const error = await res.json()

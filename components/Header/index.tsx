@@ -32,7 +32,7 @@ const Header = () => {
               </div>
             </li>
           </ul>
-          <a href={`https://box.reinsys.net/brilliant/`}>
+          <a href={`/register`}>
               <Button className={`py-2 pb-2.5 px-6 text-xs font-medium text-blue font-semibold bg-gold rounded-full`}>
                 Sign Up
               </Button>
@@ -56,7 +56,7 @@ const Header = () => {
               </div>
             </li>
           </ul>
-          <a href={`https://box.reinsys.net/brilliant/`}>
+          <a href={`/register`}>
             <Button className={`py-2 pb-2.5 px-6 text-xs font-medium text-white grad-to-right rounded-full`}>
               Sign Up
             </Button>

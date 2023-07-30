@@ -77,10 +77,10 @@ const Register = () => {
                     <div className="flex-1 flex flex-col-reverse justify-center items-center md:items-start md:flex-col md:justify-between text-center md:text-left">
                         <div>
                             <p className="md:text-4xl">
-                                <span className="text-primary font-bold">Welcome to </span>
+                                <span className="text-gold font-bold">Welcome to </span>
                                 <span className="text-gray-800 font-bold font-argentinum">Eraskon</span>
                             </p>
-                            <p className='hidden md:block'>The Brilliant Brain Scholarship Scheme is a scholarship management platform with a vision to ensuring that no person of school age is denied access to education</p>
+                            <p className='hidden md:block'>Eraskon Nigeria Limited (ENL) is an indigenous Security and Logistics services provider in the Oil & Gas and Marine sectors of the Nigerian economy with the vision of delivering top rated security services as required by clients while optimizing client’s profit and minimizing operational cost.</p>
                         </div>
                         {/* <h1 className="text-4xl font-bold text-gray-800 font-argentinum mb-3 text-center md:hidden">Sign Up</h1> */}
                         <Image src={RegisterImg} alt="" className="w-32 h-24 md:w-full md:h-auto" /> 

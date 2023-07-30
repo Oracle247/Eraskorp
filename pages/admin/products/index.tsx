@@ -64,7 +64,7 @@ const Products = () => {
   return (
     <AdminLayout>
       <Head>
-        <title>Eraskorp</title>
+        <title>Eraskon</title>
         <meta name="description" content="Product Admin Page" />
         <link rel="icon" href="/faviconimg.png" />
       </Head>

@@ -119,7 +119,7 @@ const EditCms = () => {
     return (
         <AdminLayout>
             <Head>
-                <title>Eraskorp</title>
+                <title>Eraskon</title>
                 <meta name="description" content="Engine Pil Company" />
                 <link rel="icon" href="/faviconimg.png" />
             </Head>

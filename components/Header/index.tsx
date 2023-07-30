@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { BiMenu } from 'react-icons/bi'
 import { MdOutlineClose } from 'react-icons/md'
-import Logo from "@/assets/eraskorp/IMG-20230608-WA0069-removebg-preview.png"
+import Logo from "@/assets/eraskon/IMG-20230608-WA0069-removebg-preview.png"
 import Link from 'next/link'
 import Image from 'next/image'
 import Button from '../Button'
@@ -15,7 +15,7 @@ const Header = () => {
     <header className='w-full flex items-center justify-between '>
         <Link href={"/"} className="flex justify-center items-end gap-4">
           <Image src={Logo} className='w-12 h-12 md:h-12' alt='' />
-          <h2 className="text-white font-extrabold text-2xl">ERASKORP</h2>
+          <h2 className="text-white font-extrabold text-2xl">ERASKON</h2>
         </Link>
         <nav className="hidden text-white lg:flex items-center gap-2 lg:gap-4 whitespace-nowrap">
           <ul className='flex flex-col lg:flex-row items-center text-sm text-dark-light gap-2 lg:gap-4 font-medium'>

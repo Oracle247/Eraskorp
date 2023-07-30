@@ -88,9 +88,9 @@ const Login = () => {
                         <div>
                             <p className="md:text-4xl">
                                 <span className="font-bold text-gold">Welcome to </span>
-                                <span className="font-bold text-blue-800 font-argentinum">Eraskorp</span>
+                                <span className="font-bold text-blue-800 font-argentinum">Eraskon</span>
                             </p>
-                            <p className='hidden md:block'>Eraskorp Nigeria Limited (ENL) is an indigenous Security and Logistics services provider in the Oil & Gas and Marine sectors of the Nigerian economy with the vision of delivering top rated security services as required by clients while optimizing client’s profit and minimizing operational cost. </p>
+                            <p className='hidden md:block'>Eraskon Nigeria Limited (ENL) is an indigenous Security and Logistics services provider in the Oil & Gas and Marine sectors of the Nigerian economy with the vision of delivering top rated security services as required by clients while optimizing client’s profit and minimizing operational cost. </p>
                         </div>
                         {/* <h1 className="mb-3 text-4xl font-bold text-center text-gray-800 font-argentinum md:hidden">Sign In</h1> */}
                         <Image src={LockImg} alt="" className="w-32 h-24 md:w-full md:h-auto" /> 

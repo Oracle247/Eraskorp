@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const { MONGODB_URI } = process.env;
-// const MONGODB_URI = "mongodb+srv://Oracle247:<password>@cluster0.qvwi6.mongodb.net/Eraskorp?retryWrites=true&w=majority";
+// const MONGODB_URI = "mongodb+srv://Oracle247:<password>@cluster0.qvwi6.mongodb.net/eraskorp?retryWrites=true&w=majority";
 if (!MONGODB_URI) throw new Error('MONGODB_URI not defined');
 // if (!MONGODB_DB) throw new Error('MONGODB_DB not defined');
 

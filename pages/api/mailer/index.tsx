@@ -57,12 +57,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                         </p>
                         <div style="margin-top: 42px; font-weight: 500; opacity: 0.97; margin-bottom: 42px; font-size: 14px;">
                             <p>Best Regards,</p>
-                            <p>The Eraskorp Team</p>
+                            <p>The Eraskon Team</p>
                         </div>
                         <p style="height: 1px; background-color: #00000025;"></p>
                         <div>
                             <p style="font-size: 12px; margin-top: 30px; margin-bottom: 30px; color: #444444; max-width: 410px; line-height: 25px; letter-spacing: 0.02em;">
-                                Talk to us anytime! Call +2347001020300 or email info@bbscholarship.org © 2023 Eraskorp, Inc. All rights reserved.
+                                Talk to us anytime! Call +2347001020300 or email info@bbscholarship.org © 2023 Eraskon, Inc. All rights reserved.
                             </p>
                         </div>
                     </div>
